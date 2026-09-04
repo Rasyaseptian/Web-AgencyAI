@@ -1,10 +1,16 @@
 import React from 'react'
 import Title from './Title'
 import { teamData } from '../assets/assets'
+import { motion } from 'motion/react'
 
 const Teams = () => {
   return (
-    <div className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30
+    <motion.div
+    initial="hidden"
+    whileInView="visible"
+    transition={{staggerChildren: 0.2}}
+    viewport={{once: true}}
+    className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30
     text-gray-700 dark:text-white'>
         <Title title="Meet the Team" subTitle="A passionate team of digital expert dedicated to your brand
         success."/>
@@ -22,7 +28,7 @@ const Teams = () => {
                 </div>
             ))}
         </div>
-    </div>
+    </motion.div>
   )
 }
 
